@@ -52,7 +52,7 @@ export default function SignPersonalMessage() {
   }
   return (
     <main>
-      <button onClick={() => handler()}> Sign "Hello" </button>
+      <button onClick={() => handler()}> Sign Hello </button>
     </main>
   );
 }
