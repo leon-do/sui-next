@@ -23,6 +23,11 @@ export default function GetBalance() {
   return (
     <div>
       <button onClick={() => handler()}> Get Balance </button>
+      <div>
+        <a href="https://github.com/leon-do/sui-next/blob/main/src/app/components/GetBalance.tsx">
+          [Source]
+        </a>
+      </div>
     </div>
   );
 }

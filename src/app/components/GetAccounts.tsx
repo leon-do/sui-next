@@ -37,6 +37,11 @@ export default function GetAccounts() {
   return (
     <div>
       <button onClick={() => handler()}> Get Accounts </button>
+      <div>
+        <a href="https://github.com/leon-do/sui-next/blob/main/src/app/components/GetAccounts.tsx">
+          [Source]
+        </a>
+      </div>
     </div>
   );
 }

@@ -53,6 +53,11 @@ export default function SignPersonalMessage() {
   return (
     <main>
       <button onClick={() => handler()}> Sign Hello </button>
+      <div>
+        <a href="https://github.com/leon-do/sui-next/blob/main/src/app/components/SignPersonalMessage.tsx">
+          [Source]
+        </a>
+      </div>
     </main>
   );
 }

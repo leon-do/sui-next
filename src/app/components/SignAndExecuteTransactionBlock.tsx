@@ -65,6 +65,11 @@ export default function SignAndExecuteTransactionBlock() {
       <button onClick={() => handler()}>
         Sign and Execute Transaction Block
       </button>
+      <div>
+        <a href="https://github.com/leon-do/sui-next/blob/main/src/app/components/SignAndExecuteTransactionBlock.tsx">
+          [Source]
+        </a>
+      </div>
     </div>
   );
 }
