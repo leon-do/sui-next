@@ -1,10 +1,5 @@
 "use client";
-import {
-  getFullnodeUrl,
-  SuiClient,
-  SuiParsedData,
-} from "@mysten/sui.js/client";
-import { SuiMoveObject } from "@mysten/sui.js";
+import { getFullnodeUrl, SuiClient } from "@mysten/sui.js/client";
 
 export default function CallContract() {
   async function handler() {
