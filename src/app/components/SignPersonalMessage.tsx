@@ -1,5 +1,13 @@
 "use client";
 
+/*
+localhost:9680/sui/signPersonalMessage
+
+{
+  message: "hello"
+}
+*/
+
 declare global {
   interface Window {
     ethereum?: any;
@@ -32,10 +40,9 @@ export default function SignPersonalMessage() {
         },
       },
     });
-    console.log({ accounts });
 
     // sign message
-    const signature = await window.ethereum.request({
+    const signed = await window.ethereum.request({
       method: "wallet_snap",
       params: {
         snapId: "npm:@kunalabs-io/sui-metamask-snap",
@@ -48,7 +55,7 @@ export default function SignPersonalMessage() {
         },
       },
     });
-    console.log({ signature });
+    console.log(signed.signature);
   }
   return (
     <main>

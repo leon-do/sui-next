@@ -1,6 +1,16 @@
 "use client";
 import { TransactionBlock } from "@mysten/sui.js/transactions";
 
+/*
+localhost:9680/sui/sendContract
+
+{
+  target: "0x5f1cbf91020e986d82493bbb8d0efab99c848d5e5fa1eec71faf2db725e2c5f7",
+  args: ["0xa1fc3811720a381e2d55cc620c5514116c5254e2bdc72fda2af341fd0998029a"],
+  chain: "testnet" // devnet, testnet, mainnet
+}
+*/
+
 declare global {
   interface Window {
     ethereum?: any;
@@ -34,12 +44,16 @@ export default function SendContract() {
       },
     });
 
+    // https://suiexplorer.com/object/0xa1fc3811720a381e2d55cc620c5514116c5254e2bdc72fda2af341fd0998029a?network=testnet
+    const args = [
+      "0xa1fc3811720a381e2d55cc620c5514116c5254e2bdc72fda2af341fd0998029a",
+    ];
+
     // create send function: https://docs.sui.io/guides/developer/app-examples/e2e-counter#creating-a-counter
-    // https://suiexplorer.com/object/0x5f1cbf91020e986d82493bbb8d0efab99c848d5e5fa1eec71faf2db725e2c5f7?module=counter&network=testnet
     const txb = new TransactionBlock();
     txb.moveCall({
-      arguments: [txb.object("0xa1fc3811720a381e2d55cc620c5514116c5254e2bdc72fda2af341fd0998029a")],
-      target: `0x5f1cbf91020e986d82493bbb8d0efab99c848d5e5fa1eec71faf2db725e2c5f7::counter::increment`,
+      arguments: args.map((arg) => txb.object(arg)),
+      target: `0x5f1cbf91020e986d82493bbb8d0efab99c848d5e5fa1eec71faf2db725e2c5f7::counter::increment`, // https://suiexplorer.com/object/0x5f1cbf91020e986d82493bbb8d0efab99c848d5e5fa1eec71faf2db725e2c5f7?module=counter&network=testnet
     });
 
     // send transaction
@@ -57,7 +71,7 @@ export default function SendContract() {
         },
       },
     });
-    console.log({ transaction });
+    console.log(transaction.digest);
   }
   return (
     <div>

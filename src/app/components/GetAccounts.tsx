@@ -6,6 +6,10 @@ declare global {
   }
 }
 
+/*
+localhost:9680/sui/getAccount
+*/
+
 export default function GetAccounts() {
   async function handler() {
     // popup to connect to wallet
@@ -32,7 +36,7 @@ export default function GetAccounts() {
         },
       },
     });
-    console.log({ accounts });
+    console.log([accounts[0].address])
   }
   return (
     <div>

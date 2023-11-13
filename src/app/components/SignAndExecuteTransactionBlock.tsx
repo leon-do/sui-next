@@ -2,6 +2,16 @@
 
 import { TransactionBlock } from "@mysten/sui.js/transactions";
 
+/*
+localhost:9680/sui/sendTransaction
+
+{
+  to: "0x78687cc53c07484da514ca3d024d06274c9d079def21ece23a553a17397014a7",
+  value: "10000000",
+  chain: "testnet" // devnet, testnet, mainnet
+}
+*/
+
 declare global {
   interface Window {
     ethereum?: any;
@@ -58,7 +68,7 @@ export default function SignAndExecuteTransactionBlock() {
         },
       },
     });
-    console.log({ transaction });
+    console.log(transaction.digest);
   }
   return (
     <div>
