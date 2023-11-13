@@ -2,7 +2,7 @@ import GetBalance from "./components/GetBalance";
 import GetAccounts from "./components/GetAccounts";
 import SignPersonalMessage from "./components/SignPersonalMessage";
 import SignAndExecuteTransactionBlock from "./components/SignAndExecuteTransactionBlock";
-import CallContract from "./components/CallContract";
+import GetObject from "./components/GetObject";
 import SendContract from "./components/SendContract";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
       <GetAccounts />
       <SignPersonalMessage />
       <SignAndExecuteTransactionBlock />
-      <CallContract />
+      <GetObject />
       <SendContract />
     </main>
   );
